@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarveLous</title>
+
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+    <link href="/dist/output.css" rel="stylesheet">
+    <link href="src/style.css" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+    <script src="src/charScript.js" defer></script>
+
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    
+    <main class="w-full h-full bg-zinc-50 min-h-screen characterPage">
+        <a href="index.html" class="h-12">
+            <img src="src/images/logo.png" alt="Logo MarveLous" class="h-12">
+        </a>
+
+        <div class="w-full h-96 characterDiv flex flex-row items-center px-8 gap-4">
+            <img src="src/images/logo.png" class="characterImg h-72 w-72 object-cover">
+            <div class="flex flex-col justify-start items-start">
+                <h1 class="characterTitle text-3xl text-zinc-50">No-Content</h1>
+                <p class="characterDesc text-zinc-50"></p>
+            </div>
+        </div>
+        <div class="w-full h-auto flex flex-col px-8 gap-4">
+            <h1 class="text-3xl flex items-center gap-3">Comics<p class="text-xs text-zinc-700 font-medium">top 20</p></h1>
+            <div class="grid h-full grid-cols-5 gap-4 characterComics">
+
+            </div>
+        </div>
+    </main>
+</body>
+</html>

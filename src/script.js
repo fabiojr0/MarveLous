@@ -21,7 +21,6 @@ const sectionsList = []
 sections.forEach((section) => {
     sectionsList.push({id: section.getAttribute('id'), top: section.offsetTop, bottom: section.offsetTop + section.clientHeight})
 })
-console.log(sectionsList);
 window.addEventListener('scroll', calculatePosition)
 function calculatePosition() {
     const navHeight = 24;
@@ -32,7 +31,6 @@ function calculatePosition() {
             clientSection = section.id     
         }
     })
-    console.log(clientSection);
     changeNavColors(clientSection)
 
 }
@@ -70,9 +68,9 @@ function searchItems(param="spider-man",type="characters",searchType="nameStarts
         for (let i = 0; i < data.data.results.length; i++) {     
             if (`${data.data.results[i].thumbnail.path}.jpg` == "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg") {
                 if (type == "characters") {
-                    cards[i].querySelector('img').src = `images/notFound.png`
+                    cards[i].querySelector('img').src = `src/images/notFound.png`
                 } else {
-                    cards[i].querySelector('img').src = `images/notFoundTitle.png`
+                    cards[i].querySelector('img').src = `src/images/notFoundTitle.png`
                 }
             }else {
                 cards[i].querySelector('img').src = data.data.results[i].thumbnail.path + `.jpg`
@@ -80,8 +78,10 @@ function searchItems(param="spider-man",type="characters",searchType="nameStarts
 
             if (type == "characters") {
                 cards[i].querySelector('h1').innerHTML = data.data.results[i].name
+                cards[i].href = `characters.html?id=${data.data.results[i].id}`
             } else {
                 cards[i].querySelector('h1').innerHTML = data.data.results[i].title
+                cards[i].href = `comics.html?id=${data.data.results[i].id}`
             }
         }
     })
