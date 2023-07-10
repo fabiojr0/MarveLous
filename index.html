@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarveLous</title>
+
+    <link href="/dist/output.css" rel="stylesheet">
+    <link href="src/style.css" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+    <script src="src/script.js" defer></script>
+
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <nav class="flex flex-row items-center justify-between px-4 h-12 fixed top-0 z-50 w-full">
+        <img src="src/images/logo.png" alt="Logo MarveLous" class="h-full">
+        <ul class="flex flex-row justify-between gap-4 text-zinc-300">
+            <li><a href="#" class="no-underline uppercase transition-colors duration-300">home</a></li>
+            <li><a href="#characters" class="no-underline uppercase transition-colors duration-300">characters</a></li>
+            <li><a href="#comics" class="no-underline uppercase transition-colors duration-300">comics</a></li>
+        </ul>
+    </nav>
+
+    <main class="flex flex-col items-center mt-6">
+        <section class="bg-white w-full h-myScreen justify-center flex items-center p-8" id="home">
+            <div class="w-full h-full relative flex flex-row items-center">
+                <span class="cutImgLeft z-10"></span>
+                <span class="cutImgRight z-10"></span>
+                <img src="src/images/miles-background.png" alt="Miles Background" 
+                class="h-full w-full object-cover absolute top-0 bottom-0 z-0 ">
+                <img src="src/images/pavitr.png" alt="Pavitr" class="absolute h-56 -bottom-24 left-2 z-30">
+                <img src="src/images/rock.png" alt="Spider-Punk" class="absolute h-48 -bottom-16 left-80 z-30">
+                <img src="src/images/gwen.png" alt="Gwen" class="absolute h-32 top-0 left-64 z-30">
+                <img src="src/images/peter.png" alt="Peter B Parker" class="absolute h-44 top-0 left-1/2 z-30">
+                <img src="src/images/miguel.png" alt="Miguel" class="absolute h-32 top-40 left-80 z-30">
+
+                <div class="w-80 h-2/3 bg-zinc-600/90 z-20 ml-12 p-2 flex flex-col justify-between">
+                    
+                    <div>
+                        <h1 class="text-3xl text-white uppercase">spide-man</h1>
+                        <p class="text-lg text-zinc-200">Across the Spider-Verse</p>
+                    </div>
+
+                    <div class="w-full grid grid-cols-2 grid-rows-2 gap-4 h-full mt-6">
+                        <div class="flex flex-col">
+                            <h2 class="text-xs text-zinc-200 uppercase font-medium">
+                                Directors
+                            </h2>
+                            <p class="text-white text-xs">
+                                Joaquim Santos, Kemp Powers, Justin Thompson
+                            </p>
+                        </div>
+                        <div class="flex flex-col">
+                            <h2 class="text-xs text-zinc-200 uppercase font-medium">
+                                Writers
+                            </h2>
+                            <p class="text-white text-xs">  
+                                Phil Lord, Christopher Miller, Dave Callaham
+                            </p>
+                        </div>
+                        <div class="flex flex-col">
+                            <h2 class="text-xs text-zinc-200 uppercase font-medium">
+                                Stars
+                            </h2>
+                            <p class="text-white text-xs">                     
+                                Shameik Moore, Hailee Steinfeld, Brian Tyree
+                            </p>
+                        </div>
+                        <div class="flex flex-col">
+                            <h2 class="text-xs text-black bg-yellow-300 font-medium w-fit px-1">
+                                IMDb 
+                            </h2>
+                            <p class="text-white text-xs items-center mt-1">  
+                                <i class="fa-solid fa-star"></i> 8.9/10
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-zinc-400 w-full h-screen justify-center flex items-center p-8" id="characters">
+            <div class="w-full h-full flex flex-col items-center bg-white relative p-2">
+                <span class="cutImgLeft z-10 zincBorder"></span>
+                <span class="cutImgRight z-10 zincBorder"></span>
+
+                <span class="relative w-full flex flex-row items-center h-9 gap-1 pl-16 max-w-xl">
+                    <p class="whitespace-nowrap ">Search your favorite character</p>
+                    <input type="text" placeholder="Type a character name" id="characters"
+                    class="bg-zinc-50 outline-none border-0 rounded-md placeholder:text-xs w-0 delay-75 duration-700 transition-width p-1 overflow-hidden">
+                    <i class="ph ph-magnifying-glass text-xl cursor-pointer searchClick"></i>
+                </span>
+                <div class="characterImages grid grid-cols-5 grid-rows-2 h-full w-full">
+                    <div class="w-full h-full flex items-center justify-center">
+                        <div class="flex flex-col items-center bg-red-700 h-44 w-24 relative card-characters cursor-pointer group">    
+                            <img src="src/images/logo.png" class="w-24 h-24 px-1 pt-1 imagem object-cover">
+                            <span class="h-2 w-full bg-marvelYel hr group-hover:h-full transition-height duration-300"></span>
+                            <h1 class="uppercase text-white text-xs text-center p-1 w-full textOverflow absolute top-6.5 font-medium group-hover:text-zinc-500 transition-colors duration-300">no-content</h1>
+                            <span class="cutImgRightCard z-10"></span>
+                            <span class="cutImgRectangle z-10"></span>
+                            <span class="cutImgRectangle2 z-10"></span>
+                        </div>
+                    </div>
+                    <div class="w-full h-full flex items-center justify-center">
+                        <div class="flex flex-col items-center bg-red-700 h-44 w-24 relative card-characters cursor-pointer group">    
+                            <img src="src/images/logo.png" class="w-24 h-24 px-1 pt-1 imagem object-cover">
+                            <span class="h-2 w-full bg-marvelYel hr group-hover:h-full transition-height duration-300"></span>
+                            <h1 class="uppercase text-white text-xs text-center p-1 w-full textOverflow absolute top-6.5 font-medium group-hover:text-zinc-500 transition-colors duration-300">no-content</h1>
+                            <span class="cutImgRightCard z-10"></span>
+                            <span class="cutImgRectangle z-10"></span>
+                            <span class="cutImgRectangle2 z-10"></span>
+                        </div>
+                    </div>
+                    <div class="w-full h-full flex items-center justify-center">
+                        <div class="flex flex-col items-center bg-red-700 h-44 w-24 relative card-characters cursor-pointer group">    
+                            <img src="src/images/logo.png" class="w-24 h-24 px-1 pt-1 imagem object-cover">
+                            <span class="h-2 w-full bg-marvelYel hr group-hover:h-full transition-height duration-300"></span>
+                            <h1 class="uppercase text-white text-xs text-center p-1 w-full textOverflow absolute top-6.5 font-medium group-hover:text-zinc-500 transition-colors duration-300">no-content</h1>
+                            <span class="cutImgRightCard z-10"></span>
+                            <span class="cutImgRectangle z-10"></span>
+                            <span class="cutImgRectangle2 z-10"></span>
+                        </div>
+                    </div>
+                    <div class="w-full h-full flex items-center justify-center">
+                        <div class="flex flex-col items-center bg-red-700 h-44 w-24 relative card-characters cursor-pointer group">    
+                            <img src="src/images/logo.png" class="w-24 h-24 px-1 pt-1 imagem object-cover">
+                            <span class="h-2 w-full bg-marvelYel hr group-hover:h-full transition-height duration-300"></span>
+                            <h1 class="uppercase text-white text-xs text-center p-1 w-full textOverflow absolute top-6.5 font-medium group-hover:text-zinc-500 transition-colors duration-300">no-content</h1>
+                            <span class="cutImgRightCard z-10"></span>
+                            <span class="cutImgRectangle z-10"></span>
+                            <span class="cutImgRectangle2 z-10"></span>
+                        </div>
+                    </div>
+                    <div class="w-full h-full flex items-center justify-center">
+                        <div class="flex flex-col items-center bg-red-700 h-44 w-24 relative card-characters cursor-pointer group">    
+                            <img src="src/images/logo.png" class="w-24 h-24 px-1 pt-1 imagem object-cover">
+                            <span class="h-2 w-full bg-marvelYel hr group-hover:h-full transition-height duration-300"></span>
+                            <h1 class="uppercase text-white text-xs text-center p-1 w-full textOverflow absolute top-6.5 font-medium group-hover:text-zinc-500 transition-colors duration-300">no-content</h1>
+                            <span class="cutImgRightCard z-10"></span>
+                            <span class="cutImgRectangle z-10"></span>
+                            <span class="cutImgRectangle2 z-10"></span>
+                        </div>
+                    </div>
+                    <div class="w-full h-full flex items-center justify-center">
+                        <div class="flex flex-col items-center bg-red-700 h-44 w-24 relative card-characters cursor-pointer group">    
+                            <img src="src/images/logo.png" class="w-24 h-24 px-1 pt-1 imagem object-cover">
+                            <span class="h-2 w-full bg-marvelYel hr group-hover:h-full transition-height duration-300"></span>
+                            <h1 class="uppercase text-white text-xs text-center p-1 w-full textOverflow absolute top-6.5 font-medium group-hover:text-zinc-500 transition-colors duration-300">no-content</h1>
+                            <span class="cutImgRightCard z-10"></span>
+                            <span class="cutImgRectangle z-10"></span>
+                            <span class="cutImgRectangle2 z-10"></span>
+                        </div>
+                    </div>
+                    <div class="w-full h-full flex items-center justify-center">
+                        <div class="flex flex-col items-center bg-red-700 h-44 w-24 relative card-characters cursor-pointer group">    
+                            <img src="src/images/logo.png" class="w-24 h-24 px-1 pt-1 imagem object-cover">
+                            <span class="h-2 w-full bg-marvelYel hr group-hover:h-full transition-height duration-300"></span>
+                            <h1 class="uppercase text-white text-xs text-center p-1 w-full textOverflow absolute top-6.5 font-medium group-hover:text-zinc-500 transition-colors duration-300">no-content</h1>
+                            <span class="cutImgRightCard z-10"></span>
+                            <span class="cutImgRectangle z-10"></span>
+                            <span class="cutImgRectangle2 z-10"></span>
+                        </div>
+                    </div>
+                    <div class="w-full h-full flex items-center justify-center">
+                        <div class="flex flex-col items-center bg-red-700 h-44 w-24 relative card-characters cursor-pointer group">    
+                            <img src="src/images/logo.png" class="w-24 h-24 px-1 pt-1 imagem object-cover">
+                            <span class="h-2 w-full bg-marvelYel hr group-hover:h-full transition-height duration-300"></span>
+                            <h1 class="uppercase text-white text-xs text-center p-1 w-full textOverflow absolute top-6.5 font-medium group-hover:text-zinc-500 transition-colors duration-300">no-content</h1>
+                            <span class="cutImgRightCard z-10"></span>
+                            <span class="cutImgRectangle z-10"></span>
+                            <span class="cutImgRectangle2 z-10"></span>
+                        </div>
+                    </div>
+                    <div class="w-full h-full flex items-center justify-center">
+                        <div class="flex flex-col items-center bg-red-700 h-44 w-24 relative card-characters cursor-pointer group">    
+                            <img src="src/images/logo.png" class="w-24 h-24 px-1 pt-1 imagem object-cover">
+                            <span class="h-2 w-full bg-marvelYel hr group-hover:h-full transition-height duration-300"></span>
+                            <h1 class="uppercase text-white text-xs text-center p-1 w-full textOverflow absolute top-6.5 font-medium group-hover:text-zinc-500 transition-colors duration-300">no-content</h1>
+                            <span class="cutImgRightCard z-10"></span>
+                            <span class="cutImgRectangle z-10"></span>
+                            <span class="cutImgRectangle2 z-10"></span>
+                        </div>
+                    </div>
+                    <div class="w-full h-full flex items-center justify-center">
+                        <div class="flex flex-col items-center bg-red-700 h-44 w-24 relative card-characters cursor-pointer group">    
+                            <img src="src/images/logo.png" class="w-24 h-24 px-1 pt-1 imagem object-cover">
+                            <span class="h-2 w-full bg-marvelYel hr group-hover:h-full transition-height duration-300"></span>
+                            <h1 class="uppercase text-white text-xs text-center p-1 w-full textOverflow absolute top-6.5 font-medium group-hover:text-zinc-500 transition-colors duration-300">no-content</h1>
+                            <span class="cutImgRightCard z-10"></span>
+                            <span class="cutImgRectangle z-10"></span>
+                            <span class="cutImgRectangle2 z-10"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section class="bg-white w-full h-screen justify-center flex items-center p-8" id="comics">
+            <div class="w-full h-full flex flex-col items-center bg-zinc-400 relative p-2">
+                <span class="cutImgLeft z-10"></span>
+                <span class="cutImgRight z-10"></span>
+
+                <span class="relative w-full flex flex-row items-center h-9 gap-1 pl-16 max-w-xl ">
+                    <p class="whitespace-nowrap text-zinc-50">Search your favorite comic</p>
+                    <input type="text" placeholder="Type a character name" id="comics"
+                    class="bg-zinc-50 outline-none border-0 rounded-md placeholder:text-xs w-0 delay-75 duration-700 transition-width p-1 overflow-hidden">
+                    <i class="ph ph-magnifying-glass text-xl cursor-pointer searchClick"></i>
+                </span>
+                
+                <div class="comicImages grid grid-cols-5 grid-rows-2 h-full w-full">
+                    <div class="w-full h-full flex items-center justify-center">
+                        <div class="h-full w-full flex items-center flex-col p-2 group cursor-pointer card-comics">
+                            <img src="src/images/logo.png" class="h-36 w-24 object-cover group-hover:-translate-y-1 transition-all shadow-lg">
+                            <h1 class="text-xs textOverflow text-white font-medium text-center group-hover:text-marvelYel transition-colors duration-300">no-content</h1>
+                        </div>
+                    </div>  
+                    <div class="w-full h-full flex items-center justify-center">
+                        <div class="h-full w-full flex items-center flex-col p-2 group cursor-pointer card-comics">
+                            <img src="src/images/logo.png" class="h-36 w-24 object-cover group-hover:-translate-y-1 transition-all shadow-lg">
+                            <h1 class="text-xs textOverflow text-white font-medium text-center group-hover:text-marvelYel transition-colors duration-300">no-content</h1>
+                        </div>
+                    </div>  
+                    <div class="w-full h-full flex items-center justify-center">
+                        <div class="h-full w-full flex items-center flex-col p-2 group cursor-pointer card-comics">
+                            <img src="src/images/logo.png" class="h-36 w-24 object-cover group-hover:-translate-y-1 transition-all shadow-lg">
+                            <h1 class="text-xs textOverflow text-white font-medium text-center group-hover:text-marvelYel transition-colors duration-300">no-content</h1>
+                        </div>
+                    </div>  
+                    <div class="w-full h-full flex items-center justify-center">
+                        <div class="h-full w-full flex items-center flex-col p-2 group cursor-pointer card-comics">
+                            <img src="src/images/logo.png" class="h-36 w-24 object-cover group-hover:-translate-y-1 transition-all shadow-lg">
+                            <h1 class="text-xs textOverflow text-white font-medium text-center group-hover:text-marvelYel transition-colors duration-300">no-content</h1>
+                        </div>
+                    </div>  
+                    <div class="w-full h-full flex items-center justify-center">
+                        <div class="h-full w-full flex items-center flex-col p-2 group cursor-pointer card-comics">
+                            <img src="src/images/logo.png" class="h-36 w-24 object-cover group-hover:-translate-y-1 transition-all shadow-lg">
+                            <h1 class="text-xs textOverflow text-white font-medium text-center group-hover:text-marvelYel transition-colors duration-300">no-content</h1>
+                        </div>
+                    </div>  
+                    <div class="w-full h-full flex items-center justify-center">
+                        <div class="h-full w-full flex items-center flex-col p-2 group cursor-pointer card-comics">
+                            <img src="src/images/logo.png" class="h-36 w-24 object-cover group-hover:-translate-y-1 transition-all shadow-lg">
+                            <h1 class="text-xs textOverflow text-white font-medium text-center group-hover:text-marvelYel transition-colors duration-300">no-content</h1>
+                        </div>
+                    </div>  
+                    <div class="w-full h-full flex items-center justify-center">
+                        <div class="h-full w-full flex items-center flex-col p-2 group cursor-pointer card-comics">
+                            <img src="src/images/logo.png" class="h-36 w-24 object-cover group-hover:-translate-y-1 transition-all shadow-lg">
+                            <h1 class="text-xs textOverflow text-white font-medium text-center group-hover:text-marvelYel transition-colors duration-300">no-content</h1>
+                        </div>
+                    </div>  
+                    <div class="w-full h-full flex items-center justify-center">
+                        <div class="h-full w-full flex items-center flex-col p-2 group cursor-pointer card-comics">
+                            <img src="src/images/logo.png" class="h-36 w-24 object-cover group-hover:-translate-y-1 transition-all shadow-lg">
+                            <h1 class="text-xs textOverflow text-white font-medium text-center group-hover:text-marvelYel transition-colors duration-300">no-content</h1>
+                        </div>
+                    </div>  
+                    <div class="w-full h-full flex items-center justify-center">
+                        <div class="h-full w-full flex items-center flex-col p-2 group cursor-pointer card-comics">
+                            <img src="src/images/logo.png" class="h-36 w-24 object-cover group-hover:-translate-y-1 transition-all shadow-lg">
+                            <h1 class="text-xs textOverflow text-white font-medium text-center group-hover:text-marvelYel transition-colors duration-300">no-content</h1>
+                        </div>
+                    </div>  
+                    <div class="w-full h-full flex items-center justify-center">
+                        <div class="h-full w-full flex items-center flex-col p-2 group cursor-pointer card-comics">
+                            <img src="src/images/logo.png" class="h-36 w-24 object-cover group-hover:-translate-y-1 transition-all shadow-lg">
+                            <h1 class="text-xs textOverflow text-white font-medium text-center group-hover:text-marvelYel transition-colors duration-300">no-content</h1>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </section>
+    </main>
+    
+</body>
+</html>
