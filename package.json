@@ -2,6 +2,9 @@
   "devDependencies": {
     "tailwindcss": "^3.3.2"
   },
+  "scripts": {
+    "tailwind": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+  },
   "dependencies": {
     "crypto-js": "^4.1.1"
   }
