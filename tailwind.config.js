@@ -15,6 +15,9 @@ module.exports = {
         'width': 'width',
         'height': 'height',
         'position': 'left, right'
+      },
+      fontFamily: {
+        'sans': ['Roboto', 'sans-serif'],
       }
     }
   },
