@@ -69,7 +69,7 @@
     background-color: rgb(212 212 216);
 }
 
-.characterDiv {
+.characterDiv, .comicsDiv {
     background: linear-gradient(180deg, rgba(161,161,170,1) 0%, rgba(161,161,170,1) 75%, rgba(250,250,250,1) 75%, rgba(250,250,250,1) 100%);
     background-size: 150%;
 }

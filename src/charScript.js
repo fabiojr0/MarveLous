@@ -12,6 +12,7 @@ fetch(url)
 .then(response => response.json())
 .then(data => {
     const character = data.data.results[0]
+    document.title = `Marvelous - ${character.name} Page`
     const characters = document.querySelector('.characterPage')
     characters.querySelector('.characterImg').src = `${character.thumbnail.path}.jpg`
     characters.querySelector('.characterTitle').innerHTML = `${character.name}`
