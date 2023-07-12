@@ -17,10 +17,11 @@ fetch(url)
     characters.querySelector('.characterImg').src = `${character.thumbnail.path}.jpg`
     characters.querySelector('.characterTitle').innerHTML = `${character.name}`
     characters.querySelector('.characterDesc').innerHTML = `${character.description.length > 1 ? `Descripition: ${character.description}` : "Description not found"}`
-    
+    console.log(character.comics.items);
     character.comics.items.forEach(comic => {
         const comicDiv = document.createElement('div')
-        fetch(`${comic.resourceURI}?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`)
+        const comicUrl = comic.resourceURI.replace('http', 'https');
+        fetch(`${comicUrl}?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`)
             .then(response => response.json())
             .then(data => {
                 comicDiv.setAttribute('class','w-full h-full flex items-center justify-center')
